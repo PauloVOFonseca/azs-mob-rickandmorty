@@ -33,9 +33,25 @@ class _EpisodeTileWidgetState extends State<EpisodeTileWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            'EP ${widget.number} - ${widget.name}',
-            style: const TextStyle(fontSize: 18),
+          Row(
+            children: [
+              Text(
+                'EP ${widget.number} - ${widget.name}',
+                style: const TextStyle(fontSize: 18),
+              ),
+              const Spacer(),
+              const Icon(
+                Icons.remove_red_eye_outlined,
+                color: Colors.grey,
+                size: 30,
+              ),
+              SizedBox(width: 10),
+              const Icon(
+                Icons.star_border,
+                color: Colors.grey,
+                size: 30,
+              ),
+            ],
           ),
           Text(
             '${widget.date}, personagens: ${widget.characters}',

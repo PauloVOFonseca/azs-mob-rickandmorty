@@ -15,9 +15,23 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Rick and Morty Eps'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(vertical: 18, horizontal: 8),
-        child: EpisodeTileWidget(number: 1, name: 'Teste nome', date: '01/01/2000', characters: 8),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 8),
+          child: ListView(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            children: [
+              EpisodeTileWidget(
+                number: 1,
+                name: 'Teste nome',
+                date: '01/01/2000',
+                characters: 8,
+              ),
+            ],
+          ),
+          //child: EpisodeTileWidget(number: 1, name: 'Teste nome', date: '01/01/2000', characters: 8),
+        ),
       ),
     );
   }
